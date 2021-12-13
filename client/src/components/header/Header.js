@@ -77,7 +77,7 @@ function Header() {
                     {
                         isLogged //show the sign in button only if the user is not logged in, else show it
                             ? userLink() // if the user is logged then we have his/her data in the state, so we extract it and show it
-                            : <li><Link className="header_btn header_main_btn header_link_btn" to="/login"><i className="fa fa-user-astronaut fa-lg"></i> Sign in</Link></li>
+                            : <li><Link className="header_btn header_main_btn header_link_btn" to="/login"><i className="fa fa-user-astronaut fa-lg astronaut_icon"></i> Sign in</Link></li>
                     }
                 </ul>
             </header>

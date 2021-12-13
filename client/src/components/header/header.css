@@ -600,3 +600,9 @@ header ul li img {
 .black_color_text {
   color: black;
 }
+
+.astronaut_icon {
+  position: relative;
+  margin-right: 5px;
+  top: 5px;
+}
