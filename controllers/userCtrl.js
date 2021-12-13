@@ -15,7 +15,11 @@ const {OAuth2} = google.auth
 
 const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID)
 
-const {CLIENT_URL} = process.env
+let {CLIENT_URL, APPLICATION_STATUS} = process.env
+if(APPLICATION_STATUS === 'production')
+{
+    CLIENT_URL = 'https://project-focus.herokuapp.com'
+}
 
 const userCtrl = {
     register: async (req, res) => {
