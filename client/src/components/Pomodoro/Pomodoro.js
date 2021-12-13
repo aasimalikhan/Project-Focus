@@ -155,7 +155,6 @@ function App() {
         shortLength={shortLength}
         longLength={longLength}
         setIsActive={setIsActive}
-        buttonText={buttonText}
         setButtonText={setButtonText}
         volume={volume}
         />
@@ -173,7 +172,9 @@ function App() {
       <Button type="settings" toggleVisibility={toggleSettingsVisibility} />
       </Fade>
       <Settings visible={settingsVisible}
+                isActive={isActive}
                 toggleSettingsVisibility={toggleSettingsVisibility} 
+                buttonText={buttonText}
                 pomoLength={pomoLength}
                 setPomoLength={setPomoLength}
                 shortLength={shortLength}

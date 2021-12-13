@@ -1,7 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '../Button/button'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Prompt
+} from "react-router-dom";
+
 
 const Settings = ({ visible,
+                    isActive,
                     toggleSettingsVisibility,
                     pomoLength,
                     setPomoLength,
@@ -11,6 +20,7 @@ const Settings = ({ visible,
                     setLongLength,
                     fontPref,
                     setFontPref,
+                    buttonText,
                     accentColor,
                     setAccentColor,
                     closeSettings,
@@ -24,6 +34,8 @@ const Settings = ({ visible,
     purple: '#D881F8',
   }
 
+
+  const [pomStarted, setPomStarted] = useState(false)
   const fonts = {
     kumbh: `'Kumbh Sans', sans-serif`,
     roboto: `'Roboto Slab', serif`,
@@ -33,27 +45,57 @@ const Settings = ({ visible,
   const styles = document.documentElement.style
 
   const applySettings = (event) => {
+    
     event.preventDefault()
+    console.log(buttonText)
 
-    setPomoLength(event.target.pomodoro.value)
-    setShortLength(event.target.shortBreak.value)
-    setLongLength(event.target.longBreak.value)
-    setFontPref(event.target.font.value)
-    setAccentColor(event.target.color.value)
-    closeSettings()
+    if(!isActive && !(buttonText === 'PAUSE' || buttonText === 'RESUME'))
+    {
+      setPomoLength(event.target.pomodoro.value)
+      setShortLength(event.target.shortBreak.value)
+      setLongLength(event.target.longBreak.value)
+      setFontPref(event.target.font.value)
+      setAccentColor(event.target.color.value)
+      closeSettings()
 
-    styles.setProperty("--font-current", fonts[event.target.font.value])
-    styles.setProperty("--accent-color", colors[event.target.color.value])
+      styles.setProperty("--font-current", fonts[event.target.font.value])
+      styles.setProperty("--accent-color", colors[event.target.color.value])
 
-    switch(timerMode) {
-      case 'short':
-        setSecondsLeft(event.target.shortBreak.value * 60)
-        break
-      case 'long':
-        setSecondsLeft(event.target.longBreak.value * 60)
-        break
-      default:
-        setSecondsLeft(event.target.pomodoro.value * 60)
+      switch(timerMode) {
+        case 'short':
+          setSecondsLeft(event.target.shortBreak.value * 60)
+          break
+        case 'long':
+          setSecondsLeft(event.target.longBreak.value * 60)
+          break
+        default:
+          setSecondsLeft(event.target.pomodoro.value * 60)
+      }
+    }
+    else{
+      if(window.confirm("The Timer is currently running, You will lose current data if you change any setting?"))
+      {
+        setPomoLength(event.target.pomodoro.value)
+        setShortLength(event.target.shortBreak.value)
+        setLongLength(event.target.longBreak.value)
+        setFontPref(event.target.font.value)
+        setAccentColor(event.target.color.value)
+        closeSettings()
+
+        styles.setProperty("--font-current", fonts[event.target.font.value])
+        styles.setProperty("--accent-color", colors[event.target.color.value])
+
+        switch(timerMode) {
+          case 'short':
+            setSecondsLeft(event.target.shortBreak.value * 60)
+            break
+          case 'long':
+            setSecondsLeft(event.target.longBreak.value * 60)
+            break
+          default:
+            setSecondsLeft(event.target.pomodoro.value * 60)
+        }
+      }
     }
   }
 
@@ -63,7 +105,13 @@ const Settings = ({ visible,
       <div className="preferences__pane">
         <Button type="close" buttonText="×" toggleVisibility={toggleSettingsVisibility} />
         <h2>Settings</h2>
+        
         <form onSubmit={applySettings}>
+          <Prompt
+            when={pomStarted}
+            message=
+              "The Pomodoro Timer is currently running. You will lose your current session data."
+          />
           <div className="pane__time-settings">
             <h3>Time (Minutes)</h3>
             <div action="" className="time-settings__form">

@@ -40,7 +40,10 @@ const TimerDisplay = ({ timerMode,
       return null
     }
 
-    setPomStarted(true);
+    if(!pomStarted)
+    {
+      setPomStarted(true);
+    }
     
     if (timeLeft === '0:00') {
       return null
@@ -82,11 +85,11 @@ const TimerDisplay = ({ timerMode,
         message=
           "The Pomodoro Timer is currently running. You will lose your current session data."
       />
-      <Prompt
+      {/* <Prompt
         when={isActive}
         message=
           "The Pomodoro Timer is currently running. You will lose your current session data."
-      />
+      /> */}
       <div className="timer__display">
         <CircularProgressbarWithChildren
           value={percentage}
