@@ -23,6 +23,7 @@ import Tasks from '../Tasks/Tasks'
 import DetailedStatistics from '../Detailed_Statistics/Detailed_Statistics'
 import Merchandise from '../Merchandise/Merchandise'
 import Premium from '../Premium/Premium'
+import GetStarted from '../GetStarted/GetStarted'
  
 import {useSelector} from 'react-redux'
 
@@ -55,6 +56,7 @@ function Body() {
                 <Route path="/detailed_statistics" component={isLogged ? DetailedStatistics : NotFound} exact />
                 <Route path="/merchandise" component={Merchandise} exact />
                 <Route path="/premium" component={Premium} exact />
+                <Route path="/get_started" component={GetStarted} exact />
                 <Route path='*' exact component={NotFound} />
             </Switch>
         </section>

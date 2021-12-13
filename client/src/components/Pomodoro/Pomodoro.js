@@ -41,6 +41,7 @@ function App() {
   const [ secondsLeft, setSecondsLeft] = useState(pomoLength * 60)
   const [ isActive, setIsActive ] = useState(false)
   const [ buttonText, setButtonText ] = useState('START')
+  const [pomStarted, setPomStarted] = useState(false)
   // const [ pomStarted, setPomStarted] = useState(false)
   const [ pomodata, setPomoData] = useState(initialState)
   const auth = useSelector(state => state.auth) //making the redux state be available inside the component
@@ -71,12 +72,28 @@ function App() {
 
   }
   
+  
 
   useEffect(() => {
     if(isActive) {
       const interval = setInterval(() => {
-        setSecondsLeft(secondsLeft => secondsLeft - 1)
+        requestAnimationFrame(()=>{
+          setSecondsLeft(secondsLeft => secondsLeft - 1)
+        })
+        
       }, 1000)
+
+      // if(pomStarted)
+      // {
+      // window.addEventListener('beforeunload', (event) => {
+      //   console.log("pomStarted: ", pomStarted)
+      //   if (pomStarted) {
+      //     event.returnValue = 'You have unfinished changes!';
+      //   }
+      // });
+      // }
+
+      // const anim_interval =
 
       
     
@@ -157,6 +174,8 @@ function App() {
         setIsActive={setIsActive}
         setButtonText={setButtonText}
         volume={volume}
+        pomStarted={pomStarted}
+        setPomStarted={setPomStarted}
         />
       <TimerDisplay
         timerMode={timerMode}
@@ -168,6 +187,8 @@ function App() {
         setButtonText={setButtonText}
         volume={volume}
         setVolume={setVolume}
+        pomStarted={pomStarted}
+        setPomStarted={setPomStarted}
         />
       <Button type="settings" toggleVisibility={toggleSettingsVisibility} />
       </Fade>
@@ -188,6 +209,8 @@ function App() {
                 closeSettings={toggleSettingsVisibility}
                 setSecondsLeft={setSecondsLeft}
                 timerMode={timerMode}
+                pomStarted={pomStarted}
+                setPomStarted={setPomStarted}
                 />
               
     </div>

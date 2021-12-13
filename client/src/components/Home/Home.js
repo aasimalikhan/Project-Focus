@@ -46,6 +46,7 @@ function Home() {
                         <h4 className="home_subheading">Join our app to get productive with pomodoro study sessions and task management.</h4>
                         <div className="home_button_container">
                             <div className="home_button_features_container">
+                                <Link to="/get_started"><a className="features_link">Get Started</a></Link>
                                 <Link to="/pomodoro"><a className="features_link">Pomodoro</a></Link>
                                 <Link to="/tasks"><a className="features_link">Todo</a></Link>
                                 <Link to="/studywith"><a className="features_link">Study With</a></Link>

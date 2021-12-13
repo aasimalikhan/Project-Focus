@@ -19,6 +19,8 @@ const Controls = ({ timerMode,
                     setIsActive,
                     buttonText,
                     setButtonText,
+                    setPomStarted,
+                    pomStarted,
                     volume
                   }) => {
 
@@ -34,6 +36,7 @@ const Controls = ({ timerMode,
       setTimerMode(event.target.id)
       setIsActive(false)
       setButtonText('START')
+      setPomStarted(false)
       switch(event.target.id) {
         case 'short':
           setSecondsLeft(shortLength * 60)
@@ -52,6 +55,7 @@ const Controls = ({ timerMode,
         setTimerMode(event.target.id)
         setIsActive(false)
         setButtonText('START')
+        setPomStarted(false)
         switch(event.target.id) {
           case 'short':
             setSecondsLeft(shortLength * 60)
@@ -70,11 +74,11 @@ const Controls = ({ timerMode,
 
   return(
     <form className="controls">
-      <Prompt
+      {/* <Prompt
         when={currentlyRunning}
         message=
           "The Pomodoro Timer is currently running. You will lose your current session data."
-      />
+      /> */}
       <input  type="radio" 
               id="pomo" 
               name="mode" 

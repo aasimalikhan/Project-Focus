@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import MuteToggle from '../MuteToggle/mutetoggle'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
@@ -21,7 +21,9 @@ const TimerDisplay = ({ timerMode,
                         buttonText,
                         setButtonText,
                         volume,
-                        setVolume
+                        setVolume,
+                        pomStarted, 
+                        setPomStarted
                       }) => {
                       
 
@@ -33,7 +35,27 @@ const TimerDisplay = ({ timerMode,
                                       interupt: true,
                                       volume: volume,
                                     })
-  const [pomStarted, setPomStarted] = useState(false);
+  // const [pomStarted, setPomStarted] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', alertUser)
+  //   window.addEventListener('unload', handleEndConcert)
+  //   return () => {
+  //     window.removeEventListener('beforeunload', alertUser)
+  //     window.removeEventListener('unload', handleEndConcert)
+  //     handleEndConcert()
+  //   }
+  // }, [])
+  const alertUser = e => {
+    e.preventDefault()
+    e.returnValue = 'OP Level'
+  }
+  const handleEndConcert = async () => {
+    // await fetcher({
+    //   url: endConcert(concert.id),
+    //   method: 'PUT'
+    // })
+  }
 
   const handleClick = (event) => {
     if (event.target.id === 'muteButton') {
@@ -43,9 +65,11 @@ const TimerDisplay = ({ timerMode,
     if(!pomStarted)
     {
       setPomStarted(true);
+      
     }
     
     if (timeLeft === '0:00') {
+
       return null
     }
 
@@ -83,8 +107,18 @@ const TimerDisplay = ({ timerMode,
       <Prompt
         when={pomStarted}
         message=
-          "The Pomodoro Timer is currently running. You will lose your current session data."
+          "The Pomodoro Timer is currently running. You will lose your current session data op."
       />
+
+      {/* <Prompt
+        when={pomStarted}
+        message={() => "Are you sure you want to leave nigga?"}
+      /> */}
+      
+      {/* <Prompt
+        when}
+        message={() => 'Are you sure you want to leave this page?'}
+      /> */}
       {/* <Prompt
         when={isActive}
         message=

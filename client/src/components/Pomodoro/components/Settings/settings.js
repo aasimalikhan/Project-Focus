@@ -26,6 +26,8 @@ const Settings = ({ visible,
                     closeSettings,
                     setSecondsLeft,
                     timerMode,
+                    pomStarted,
+                    setPomStarted
                   }) => {
 
   const colors = {
@@ -35,7 +37,7 @@ const Settings = ({ visible,
   }
 
 
-  const [pomStarted, setPomStarted] = useState(false)
+  // const [pomStarted, setPomStarted] = useState(false)
   const fonts = {
     kumbh: `'Kumbh Sans', sans-serif`,
     roboto: `'Roboto Slab', serif`,
@@ -110,7 +112,7 @@ const Settings = ({ visible,
           <Prompt
             when={pomStarted}
             message=
-              "The Pomodoro Timer is currently running. You will lose your current session data."
+              "The Pomodoro Timer is currently running. You will lose your current session data ,,settings."
           />
           <div className="pane__time-settings">
             <h3>Time (Minutes)</h3>
