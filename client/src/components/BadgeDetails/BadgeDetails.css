@@ -1,0 +1,29 @@
+.badges_details_container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badges_details_card {
+  color: #fff;
+  width: 250px;
+  height: 300px;
+  padding: 1.5rem;
+}
+
+.badges_details_heading {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.badges_details_image {
+  height: 150px;
+}
+.badges_details_list {
+  list-style: none;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}

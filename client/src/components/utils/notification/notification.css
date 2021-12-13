@@ -1,0 +1,36 @@
+.errMsg {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(250, 28, 28);
+  font-size: 0.8rem;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 28, 28, 1) 0%,
+    rgba(230, 3, 3, 1) 100%
+  );
+  color: rgba(255, 255, 255, 0.83);
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 1.3px;
+  margin-bottom: 1rem;
+}
+
+.successMsg {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(159, 219, 0);
+  font-size: 0.8rem;
+  background: linear-gradient(
+    90deg,
+    rgba(159, 219, 0, 1) 0%,
+    rgba(84, 150, 1, 1) 100%
+  );
+  color: rgba(255, 255, 255, 0.83);
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 1.3px;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,73 @@
+.announcements_details_container {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.announcements_details_card {
+  color: #fff;
+  width: 250px;
+  height: 300px;
+  padding: 1.5rem;
+}
+
+.announcements_details_heading {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.announcements_details_image {
+  height: 150px;
+}
+.announcements_list {
+  /* height: 50px; */
+  list-style: none;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.announcements_list_item {
+  display: flex;
+  border-radius: 20px;
+  background: rgb(17, 17, 17);
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+
+.announcements_list_item_left {
+  /* width: 10%; */
+  /* height: 70px; */
+  line-height: 70px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  /* line-height: 100%; */
+  text-align: center;
+  color: rgb(255, 147, 6);
+  background: rgb(46, 46, 46);
+}
+
+.announcements_list_item_left span {
+  font-weight: 300;
+}
+
+/* .announcements_list_item_right > * {
+  height: 50%;
+} */
+
+.announcements_list_item_right_name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.announcements_list_item_right_description {
+}
+
+.announcements_list_item_right {
+  /* width: 90%; */
+  padding: 0.5rem 0.8rem;
+}

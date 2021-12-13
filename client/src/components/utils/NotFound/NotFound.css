@@ -1,0 +1,35 @@
+.center_not {
+  font-family: "Poppins";
+  height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.not_found {
+  /* height: 300px; */
+  z-index: -2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.not_main_heading {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgb(255, 101, 101);
+}
+
+.not_heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.not_subheading {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 300;
+}

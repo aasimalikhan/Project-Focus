@@ -1,0 +1,11 @@
+.vids_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.video_card {
+  display: inline-block;
+  margin: 0 1rem;
+}

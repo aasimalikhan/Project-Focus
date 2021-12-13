@@ -1,0 +1,106 @@
+.merchandise_container_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.merchandise_card {
+  /* padding: 0.5rem; */
+  background: rgb(32, 207, 255);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.8rem;
+}
+
+.merchandise_card_img {
+  padding: 0.7rem;
+}
+
+.merchandise_card_img img {
+  height: 200px;
+}
+
+.merchandise_card_detail {
+  padding: 0.7rem;
+  background: white;
+}
+.merchandise_card_heading {
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.merchandise_card_subheading {
+  color: rgb(90, 90, 90);
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.merchandise_buy_button {
+  font-family: "Poppins";
+  background: rgb(7, 252, 238);
+  color: white;
+  font-size: 0.8rem;
+  background: linear-gradient(
+    142deg,
+    rgba(7, 252, 238, 1) 0%,
+    rgba(112, 0, 201, 1) 100%
+  );
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.merchandise_buy_button:hover {
+  font-family: "Poppins";
+  background: rgb(7, 252, 238);
+  color: white;
+  font-size: 0.8rem;
+  transform: scale(0.95);
+  background: linear-gradient(
+    142deg,
+    rgba(7, 252, 238, 1) 0%,
+    rgba(112, 0, 201, 1) 100%
+  );
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.merchandise_buy_button:hover {
+  transform: scale(0.95);
+  background: linear-gradient(
+    142deg,
+    rgba(7, 252, 238, 1) 0%,
+    rgba(112, 0, 201, 1) 100%
+  );
+}
+
+.merchandise_buy_button:active {
+  transform: scale(1);
+  background: linear-gradient(
+    142deg,
+    rgba(7, 252, 238, 1) 0%,
+    rgba(112, 0, 201, 1) 100%
+  );
+}
+
+.merchandise_card_price {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 800;
+}
+
+.merchandise_notice {
+  text-align: center;
+  color: red;
+}
+
+.merchandise_notice_text {
+  color: red;
+}
+
+.merchandise_notice_text_2 {
+  color: yellow;
+}

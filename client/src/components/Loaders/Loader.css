@@ -1,0 +1,25 @@
+#preloader {
+  position: absolute;
+  width: 240px;
+  height: 120px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#preloader #plug,
+#preloader #socket {
+  fill: #000000;
+}
+
+#preloader #loop-normal {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 12;
+}
+
+#preloader #loop-offset {
+  display: none;
+}

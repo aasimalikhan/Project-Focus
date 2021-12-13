@@ -1,0 +1,139 @@
+.pomodata_section {
+  padding: 2rem 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.pie_container {
+  width: 40%;
+  margin: auto;
+}
+
+.badges_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge_card {
+  background: rgb(44, 44, 44);
+  margin: 0.6rem;
+  padding: 1rem;
+  border-radius: 13px;
+}
+
+.badge_card_name {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.badge_icon {
+  height: 100px;
+}
+
+.fa-external-link-alt {
+  font-size: 60%;
+  cursor: pointer;
+  color: #fff;
+}
+
+.text_neon {
+  color: #f5f5f5;
+  text-shadow: 0 0 3px #f5f5f5, 0 0 15px #7deaecaa, 0 0 30px #7deaecaa;
+}
+
+.user_description {
+  text-align: center;
+  color: #fff;
+}
+
+.user_heading {
+  background: #ffffff;
+  background: -webkit-linear-gradient(
+    to bottom right,
+    #ffffff 0%,
+    #949494 100%
+  );
+  background: -moz-linear-gradient(to bottom right, #ffffff 0%, #949494 100%);
+  background: linear-gradient(to bottom right, #ffffff 0%, #949494 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2rem;
+}
+
+.badge_notice {
+  color: #fff;
+  text-align: center;
+}
+
+.pie_data {
+  color: white;
+}
+
+.session_empty {
+  color: red;
+}
+
+.time_display_container {
+  text-align: center;
+
+  border-radius: 12px;
+  max-width: 300px;
+  padding: 1rem;
+  background: white;
+  /* margin: 0 auto; */
+}
+
+.time_display_text {
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 2px 2px;
+  margin: 0 0;
+  color: #000;
+}
+
+.display_container_heading {
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.section_spread {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_spread > * {
+  max-height: 150px;
+  min-height: 150px;
+  margin: 0.8rem;
+}
+
+.small_table_text {
+  font-size: 0.7rem;
+  color: red;
+}
+
+.small_table_text_val {
+  font-size: 0.7rem;
+}
+
+.text_v {
+  height: 100%;
+  font-size: 4rem;
+  font-weight: 700;
+  color: red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
