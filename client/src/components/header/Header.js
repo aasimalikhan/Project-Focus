@@ -32,8 +32,8 @@ function Header() {
     const { user, isLogged, isAdmin } = auth
     const userLink = () => {
         return <>
-            <li><Link className="header_btn_yell third_yell header_link_btn" to="/get_announcements"><i className="fa fa-bell fa-lg"></i></Link></li>
-            <li><Link className="header_btn_yell third_yell header_link_btn" to="/challenge_details"><i className="fa fa-trophy fa-lg"></i></Link></li>
+            <li><Link className="header_btn_yell third_yell header_link_btn" to="/get_announcements"><i className="fa fa-bell fa-2x"></i></Link></li>
+            <li><Link className="header_btn_yell third_yell header_link_btn" to="/challenge_details"><i className="fa fa-trophy fa-2x"></i></Link></li>
 
             <li className="drop-nav">
                 <Link to='/profile' className="avatar">
@@ -55,9 +55,7 @@ function Header() {
                     <li><Link className="header_btn third header_link_btn" to="/studywith"><i className="fa fa_r fa-graduation-cap "></i>Study with</Link></li>
                     <li><Link className="header_btn third header_link_btn" to="/pomodoro"><i className="fa fa_r fa-clock"></i> Pomodoro</Link></li>
                     <li><Link className="header_btn third header_link_btn" to="/tasks"><i className="fa fa_r fa-clipboard-check"></i> Todo</Link></li>
-                    <li><Link className="header_btn third header_link_btn" to="/resources"><i className="fa fa_r fa-inbox "></i> Resources</Link></li>
                     <li><Link className="header_btn third header_link_btn" to="/get_leaderboard"><i className="fa fa_r fa-chart-bar "></i> LeaderBoard</Link></li>
-                    {isAdmin ? <li><Link className="header_btn third header_link_btn" to="/make_announcement"><i className="fa fa_r fa-chart-bar "></i>Announcement</Link></li> : <></>}
                     <li>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -67,6 +65,8 @@ function Header() {
                             <Dropdown.Menu>
                                 <Dropdown.Item><Link className="black_color_text" to="/merchandise">Merchandise</Link></Dropdown.Item>
                                 { isAdmin ? <Dropdown.Item><Link className="black_color_text" to="/get_issues">Issues</Link></Dropdown.Item> : <></> }
+                                { isAdmin ? <Dropdown.Item><Link className="black_color_text" to="/make_announcement"><i className="fa fa_r fa-chart-bar "></i>Announcement</Link></Dropdown.Item> : <></>}
+                                <Dropdown.Item><Link className="black_color_text" to="/resources"><i className="fa fa_r fa-inbox "></i> Resources</Link></Dropdown.Item>
                                 <Dropdown.Item><Link className="black_color_text" to="/premium">PREMIUM</Link></Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
