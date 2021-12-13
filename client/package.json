@@ -31,6 +31,7 @@
     "redux-thunk": "^2.4.0",
     "sassy-datepicker": "^0.6.0",
     "streaker-js": "0.0.1",
+    "use-sound": "^4.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
