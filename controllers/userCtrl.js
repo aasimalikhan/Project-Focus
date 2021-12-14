@@ -659,11 +659,11 @@ const createActivationToken = (payload) => {
 }
 
 const createAccessToken = (payload) => {
-    return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '30m'})
+    return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10h'})
 }
 
 const createRefreshToken = (payload) => {
-    return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '30m'})
+    return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '10h'})
 }
 
 module.exports = userCtrl
