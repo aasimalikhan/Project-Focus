@@ -60,7 +60,10 @@ const userCtrl = {
 
             //to the sendMail function, the sender email and the url where user can register is supplied
             sendMail(email, url, "Verify your email address").then(res => {
-            }).catch (err => res.status(500).json({msg: err.message}))
+            }).catch (err => {
+                console.log(err)
+                res.status(500).json({msg: err.message})
+            })
 
 
             res.json({msg: "Register Success! Please activate your account to start"})
