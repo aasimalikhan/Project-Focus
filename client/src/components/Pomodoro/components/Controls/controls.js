@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import useSound from 'use-sound'
 import clickSfx from '../../sounds/slide.mp3'
+import axios from 'axios'
+import {useSelector} from 'react-redux' //to get state
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,9 +11,19 @@ import {
   Prompt
 } from "react-router-dom";
 
+const initialState = {
+  email: '',
+  sessiontime: 0,
+  date: new Date().toISOString(),
+  err: '',
+  success: ''
+}
+
+
 const Controls = ({ timerMode,
                     isActive,
                     setTimerMode,
+                    secondsLeft,
                     setSecondsLeft,
                     pomoLength,
                     shortLength,
@@ -25,7 +37,21 @@ const Controls = ({ timerMode,
                   }) => {
 
   const [playSfx] = useSound(clickSfx, { volume: volume });
-  const [currentlyRunning, setCurrentlyRunning] = useState(false)
+  const [currentlyRunning, setCurrentlyRunning] = useState(false);
+  const [ pomodata, setPomoData] = useState(initialState);
+  const auth = useSelector(state => state.auth) //making the redux state be available inside the component
+  const {user, isLogged} = auth;
+  
+
+  const addPomodoroData = async (email, sessiontime, date) => {
+    try {
+      const res = await axios.post('/user/add_session', {email, sessiontime, date})
+    } catch(err) {
+      err.response.data.msg &&
+      setPomoData({...pomodata, err: err.response.data.msg, success: ''})
+    }
+
+  }
 
   const handleModeChange = (event) => {
     if(!isActive && !(buttonText === 'RESUME' || buttonText === ' PAUSE'))
@@ -52,6 +78,7 @@ const Controls = ({ timerMode,
     {
       if(window.confirm("The Timer is currently running, Are you sure you want to switch?"))
       {
+        addPomodoroData(user.email,Math.ceil((pomoLength*60 - secondsLeft)/60), new Date().toISOString());
         setTimerMode(event.target.id)
         setIsActive(false)
         setButtonText('START')

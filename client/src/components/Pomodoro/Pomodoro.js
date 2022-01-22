@@ -165,6 +165,7 @@ function App() {
       <Controls
         timerMode={timerMode} 
         setTimerMode={setTimerMode}
+        secondsLeft={secondsLeft}
         setSecondsLeft={setSecondsLeft}
         buttonText={buttonText}
         isActive={isActive}
