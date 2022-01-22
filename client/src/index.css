@@ -5,13 +5,7 @@
   --blue: #3498db;
 }
 
-@media screen and (max-width: 800px) {
-  body {
-    font-size: 50%;
-    background: white;
-    color: green;
-  }
-}
+
 
 body {
   padding: 0;

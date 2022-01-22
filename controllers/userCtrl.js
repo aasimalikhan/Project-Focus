@@ -609,6 +609,8 @@ const userCtrl = {
 
         const user = await Users.findById(req.user.id).select('-password');
         const pomSess = user.PomodoroSessions;
+        const currentYear = new Date().getFullYear();
+
         
 
         // const pomodoroSessionsOnDate = await Pomodoro.aggregate([
@@ -625,7 +627,12 @@ const userCtrl = {
         const pomodorosMonthly = await Pomodoro.aggregate([
                 {
                     $match: {
-                        '_id': {$in: pomSess}
+                        '_id': {$in: pomSess},
+                        'date': {
+                            $gte: new Date(currentYear,0,1),
+                            $lte: new Date(currentYear,11,31)
+                        }
+                    
                     }
                 },
                 {

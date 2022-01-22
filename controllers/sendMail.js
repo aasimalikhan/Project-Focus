@@ -9,7 +9,6 @@ const {
         MAILING_SERVICE_CLIENT_SECRET,
         MAILING_SERVICE_REFRESH_TOKEN,
         SENDER_EMAIL_ADDRESS,
-        SENDER_EMAIL_PASSWORD
 } = process.env
 
 const oAuth2Client = new google.auth.OAuth2(
@@ -29,7 +28,7 @@ const sendEmail = async (to, url, txt) => {
                 service: 'gmail',
                 auth: {
                     type: 'OAuth2',
-                    user: 'mairafatima54321@gmail.com',
+                    user: 'project.focus.no.reply@gmail.com',
                     clientId: MAILING_SERVICE_CLIENT_ID,
                     clientSecret: MAILING_SERVICE_CLIENT_SECRET,
                     refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
