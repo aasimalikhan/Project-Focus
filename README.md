@@ -50,13 +50,13 @@ Project Focus is a time-tracking and productivity app that utilizes the Pomodoro
    ```sh
    git clone https://github.com/aasimalikhan/Project-Focus.git
 2. **Configuration**:
-   Update environment variables in the .env file:
+   - Update environment variables in the .env file:
 
-   MONGODB_URL: Your MongoDB connection string.
+   - MONGODB_URL: Your MongoDB connection string.
 
-   APP_PASSWORD: Secure app password created on Google Cloud Platform (for API access).
+   - APP_PASSWORD: Secure app password created on Google Cloud Platform (for API access).
 
-   CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET: Cloudinary credentials for image storage.
+   - CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET: Cloudinary credentials for image storage.
 
 3. **Backend Setup**:
    Install backend dependencies and start the API service:
@@ -96,22 +96,16 @@ Project-Focus/
 └── package-lock.json # Dependency details - additional information
 
 ### Features
-User Authentication: Secure login and registration.
-
-Timer Setup: Set up and track work sessions with Pomodoro timers.
-
-Productivity Tracking: View progress and analyze productivity data.
+- User Authentication: Secure login and registration.
+- Timer Setup: Set up and track work sessions with Pomodoro timers.
+- Productivity Tracking: View progress and analyze productivity data.
 
 ### Usage
-Start the backend server.
-
-Start the frontend application.
-
-Register or log in to the application.
-
-Set a timer for a study session and start tracking your progress.
-
-View analytics to analyze productivity trends.
+- Start the backend server.
+- Start the frontend application.
+- Register or log in to the application.
+- Set a timer for a study session and start tracking your progress.
+- View analytics to analyze productivity trends.
 
 ### Contributing
 Contributions are welcome! Please fork this repository and open a pull request.
