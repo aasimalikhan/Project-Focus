@@ -37,7 +37,6 @@ Project Focus is a time-tracking and productivity app that utilizes the Pomodoro
 
 ### Backend
 - **Node.js**: A JavaScript runtime environment.
-- _(Optional)_ Additional dependencies/libraries.
 
 ## Getting Started
 
@@ -52,11 +51,11 @@ Project Focus is a time-tracking and productivity app that utilizes the Pomodoro
 2. **Configuration**:
    - Update environment variables in the .env file:
 
-   - MONGODB_URL: Your MongoDB connection string.
+   - **MONGODB_URL**: Your MongoDB connection string.
 
-   - APP_PASSWORD: Secure app password created on Google Cloud Platform (for API access).
+   - **APP_PASSWORD**: Secure app password created on Google Cloud Platform (for API access).
 
-   - CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET: Cloudinary credentials for image storage.
+   - **CLOUD_NAME**, **CLOUD_API_KEY**, **CLOUD_API_SECRET**: Cloudinary credentials for image storage.
 
 3. **Backend Setup**:
    Install backend dependencies and start the API service:
@@ -80,25 +79,25 @@ Project Focus is a time-tracking and productivity app that utilizes the Pomodoro
 
 ### Project Structure
 
-Project-Focus/
-├── client/           # Contains frontend code
-│   └── ...
-├── controller/       # Contains controller files for API endpoints and logic
-│   └── ...
-├── middleware/       # Contains backend middlewares for API endpoints
-│   └── ...
-├── models/           # Entity models for MongoDB with Mongoose
-│   └── ...
-├── routes/           # Route definitions
-│   └── ...
-├── server.js         # Starting point for the backend server
-├── package.json      # Dependency details
-└── package-lock.json # Dependency details - additional information
+Project-Focus/  
+├── client/ - **Contains frontend code**  
+│   └── ...  
+├── controller/ - **Contains controller files for API endpoints and logic**  
+│   └── ...  
+├── middleware/ - **Contains backend middlewares for API endpoints**  
+│   └── ...  
+├── models/ - **Entity models for MongoDB with Mongoose**  
+│   └── ...  
+├── routes/ - **Route definitions**  
+│   └── ...  
+├── server.js - **Starting point for the backend server**  
+├── package.json - **Dependency details**  
+└── package-lock.json - **Dependency details - additional information**  
 
 ### Features
-- User Authentication: Secure login and registration.
-- Timer Setup: Set up and track work sessions with Pomodoro timers.
-- Productivity Tracking: View progress and analyze productivity data.
+- **User Authentication**: Secure login and registration.
+- **Timer Setup**: Set up and track work sessions with Pomodoro timers.
+- **Productivity Tracking**: View progress and analyze productivity data.
 
 ### Usage
 - Start the backend server.
