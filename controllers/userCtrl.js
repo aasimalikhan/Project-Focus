@@ -24,52 +24,50 @@ if(APPLICATION_STATUS === 'production')
 const userCtrl = {
     register: async (req, res) => {
         try {
-            //Getting username, email and password from body
-            const {name, email, password} = req.body
-            if(!name || !email || !password) 
-                return res.status(400).json({msg: "Please fill in all fields."})
-
-            //Checking if the email is valid 
-            //Basically a regex expression which checks for validity of the email
-            if(!validateEmail(email))
-                return res.status(400).json({msg: "Invalid Email."})
-
-            //We check if the user we are about to create already exists with the same email
-            const user = await Users.findOne({email})
-            if(user) return res.status(400).json({msg: 'This email address is already taken'})
-
-            //Condition for password length
-            if(password.length < 6)
-                res.status(400).json({msg: 'Password must be atleast 6 characters'})
-
-            //hashing the password
-            const passwordHash = await bcrypt.hash(password, 12)
-
-            //creating new user with the provided credentials
+            // Getting username, email, and password from body
+            const { name, email, password } = req.body;
+            if (!name || !email || !password) {
+                return res.status(400).json({ msg: "Please fill in all fields." });
+            }
+    
+            // Checking if the email is valid 
+            if (!validateEmail(email)) {
+                return res.status(400).json({ msg: "Invalid Email." });
+            }
+    
+            // We check if the user already exists with the same email
+            const user = await Users.findOne({ email });
+            if (user) {
+                return res.status(400).json({ msg: 'This email address is already taken.' });
+            }
+    
+            // Condition for password length
+            if (password.length < 6) {
+                return res.status(400).json({ msg: 'Password must be at least 6 characters.' });
+            }
+    
+            // Hashing the password
+            const passwordHash = await bcrypt.hash(password, 12);
+    
+            // Creating a new user with the provided credentials
             const newUser = {
                 name, email, password: passwordHash
-            }
-            
-            
-
-            //Creating an activation token for registering through gmail
-            const activation_token = createActivationToken(newUser)
-
-            //We create a url to redirect the user with the jwt token
-            const url = `${CLIENT_URL}/user/activation/${activation_token}`
-
-            //to the sendMail function, the sender email and the url where user can register is supplied
-            sendMail(email, url, "Verify your email address").then(res => {
-            }).catch (err => {
-                console.log(err)
-                res.status(500).json({msg: err.message})
-            })
-
-
-            res.json({msg: "Register Success! Please activate your account to start"})
-            
-        } catch(err) {
-            return res.status(500).json({msg: err.message})
+            };
+    
+            // Creating an activation token for registering through Gmail
+            const activation_token = createActivationToken(newUser);
+    
+            // Create a URL to redirect the user with the JWT token
+            const url = `${CLIENT_URL}/user/activation/${activation_token}`;
+    
+            // Sending the email
+            await sendMail(email, url, "Verify your email address");
+    
+            return res.json({ msg: "Register Success! Please activate your account to start." });
+    
+        } catch (err) {
+            console.error("Registration error:", err);
+            return res.status(500).json({ msg: err.message || "Internal Server Error." });
         }
     },
 
@@ -610,7 +608,7 @@ const userCtrl = {
         const user = await Users.findById(req.user.id).select('-password');
         const pomSess = user.PomodoroSessions;
         const currentYear = new Date().getFullYear();
-        
+
         const pomodorosMonthly = await Pomodoro.aggregate([
                 {
                     $match: {

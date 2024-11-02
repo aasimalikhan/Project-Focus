@@ -39,8 +39,8 @@ const sendEmail = async (to, url, txt) => {
         const result = await smtpTransport.sendMail(mailOptions);
         return result;
     } catch (err) {
-        console.log(err);
-        return err;
+        console.error("Error sending email:", err);
+        throw new Error("Failed to send email."); // Provide a user-friendly error
     }
 };
 
