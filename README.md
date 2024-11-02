@@ -1,6 +1,6 @@
-# Project Name
+# Project Focus
 
-Project Focus
+A Time-Tracking and Productivity App
 
 ## Table of Contents
 
@@ -9,69 +9,115 @@ Project Focus
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Running the Project](#running-the-project)
+  - [Configuration](#configuration)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
 - [Project Structure](#project-structure)
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## About the Project
 
-Project Focus is a time-tracking and productivity app using the Pomodoro technique. It features user login, timer setup, study tracking, and analytics.
+Project Focus is a time-tracking and productivity app that utilizes the Pomodoro Technique. It allows users to:
+- Login and create an account
+- Set up timers for focused work sessions
+- Track study progress
+- Analyze their productivity data
 
 ## Technologies Used
 
-- [React](https://reactjs.org/) - The frontend library
-- [React Router](https://reactrouter.com/) - For routing
-- [Axios](https://axios-http.com/) - For handling HTTP requests
-- [Styled Components](https://styled-components.com/) - For styling (or specify any CSS framework you use)
-- [Nodejs]
-- [Other dependencies/libraries]
+### Frontend
+- **React**: A JavaScript library for building user interfaces.
+- **React Router**: A routing library for React applications.
+- **Axios**: A promise-based HTTP client for making requests to APIs.
+- **Styled Components**: A CSS-in-JS library for styling React components.
+
+### Backend
+- **Node.js**: A JavaScript runtime environment.
+- _(Optional)_ Additional dependencies/libraries.
 
 ## Getting Started
 
 ### Prerequisites
-
-- [Node.js](https://nodejs.org/) - Make sure you have Node.js and npm installed.
+- **Node.js and npm**: Ensure you have Node.js and npm installed on your system. [Download here](https://nodejs.org/en).
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
+1. **Clone the Repository**:
+   ```sh
    git clone https://github.com/aasimalikhan/Project-Focus.git
-   ```
-2. Configuration
-   Replace the below environment variables in .env file
-   Replace MONGODB_URL with your local mongodb connection string
-   Replace APP_PASSWORD with your app password created on google
-   Replace CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET with your credentials on cloudinary
+2. **Configuration**:
+   Update environment variables in the .env file:
 
-3. Backend Setup
+   MONGODB_URL: Your MongoDB connection string.
 
-   Install backend dependencies
+   APP_PASSWORD: Secure app password created on Google Cloud Platform (for API access).
+
+   CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET: Cloudinary credentials for image storage.
+
+3. **Backend Setup**:
+   Install backend dependencies and start the API service:
 
    ```bash
-   npm i
+   cd Project-Focus
+   npm install
    npm run start
    ```
-   Now the backend restapi service has started on port 5000
+   This starts the backend server on port 5000.
 
-4. Frontend Setup
+4. **Frontend Setup**:
+   Navigate to the frontend directory, install dependencies, and start the application:
+
    ```bash
    cd client
-   ```
-   Install frontend dependencies
-   ```bash
-   npm i
+   npm install
    npm run start
    ```
-   Now the frontend service has started on port 3000
+   This starts the frontend application on port 3000.
 
-## Project Structure
-    -- Project-Focus (base)
-        --client (contains frontend code)
-        --controller (contain controller files which define rest endpoints and logic)
-        --middleware (contain backend middlewares for rest endpoints)
-        --models (contain entity model in mongoose (mongodb))
-        --routes (contain route definitions)
-        --server.js (starting point for backend server)
-        --package.json (dependendency details)
-        --package-lock.json (dependency details - extras)
+### Project Structure
 
+Project-Focus/
+├── client/           # Contains frontend code
+│   └── ...
+├── controller/       # Contains controller files for API endpoints and logic
+│   └── ...
+├── middleware/       # Contains backend middlewares for API endpoints
+│   └── ...
+├── models/           # Entity models for MongoDB with Mongoose
+│   └── ...
+├── routes/           # Route definitions
+│   └── ...
+├── server.js         # Starting point for the backend server
+├── package.json      # Dependency details
+└── package-lock.json # Dependency details - additional information
+
+### Features
+User Authentication: Secure login and registration.
+
+Timer Setup: Set up and track work sessions with Pomodoro timers.
+
+Productivity Tracking: View progress and analyze productivity data.
+
+### Usage
+Start the backend server.
+
+Start the frontend application.
+
+Register or log in to the application.
+
+Set a timer for a study session and start tracking your progress.
+
+View analytics to analyze productivity trends.
+
+### Contributing
+Contributions are welcome! Please fork this repository and open a pull request.
+
+### License
+Distributed under the MIT License.
+
+### Contact
+For any questions, feel free to reach out at aasimalikhan54321@gmail.com.
