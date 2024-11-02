@@ -146,23 +146,25 @@ function PomodoroData() {
     }
 
     const data = {
-        labels: ['Focus', 'Other Stuff'],
+        labels: ['Focus', 'Remaining Time'],
         datasets: [
           {
             label: '# of Minutes',
             data: [sum_of_minutes_today, 12*60 - sum_of_minutes_today ], //instead of a particular set time (I am planning to set a daily goal, this daily goal thing makes the application more complex)
             backgroundColor: [
                 'rgba(255, 74, 3, 0.5)',
-              'rgba(125, 3, 255, 0.5)',
+              'rgba(255, 255, 255, 0.1)',
             ],
             borderColor: [
                 'rgba(255, 74, 3, 1)',
-              'rgba(125, 3, 255, 1)',
+              'rgba(255, 255, 255, .1)',
             ],
             borderWidth: 2,
           },
         ],
     };
+
+    
 
     return (
         <>
@@ -205,7 +207,7 @@ function PomodoroData() {
         <>
         <div className="profile_page pomodata_section">
             <div className="col-right">
-                <h2 className="user_heading margin-btm-high">Today Stats</h2>
+                <h2 className="user_heading margin-btm-high">Today's Stats</h2>
                 <div className="pie_container" style={{overflowX: "auto"}}>
                     <Pie className="pie_data" data={data} />;
                 </div>

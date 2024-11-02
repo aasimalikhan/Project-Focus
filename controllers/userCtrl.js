@@ -610,20 +610,7 @@ const userCtrl = {
         const user = await Users.findById(req.user.id).select('-password');
         const pomSess = user.PomodoroSessions;
         const currentYear = new Date().getFullYear();
-
         
-
-        // const pomodoroSessionsOnDate = await Pomodoro.aggregate([
-        //     { $match: {
-        //         '_id': { $in: pomSess},
-        //         date: {
-        //             '$gte': new Date(year, month, day),
-        //             '$lt': new Date(year, month, nextDay)
-        //         }
-        //     }},
-        // ])
-
-
         const pomodorosMonthly = await Pomodoro.aggregate([
                 {
                     $match: {

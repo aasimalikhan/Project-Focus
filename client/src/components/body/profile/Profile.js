@@ -178,13 +178,13 @@ function Profile() {
                             style={customStyles}
                             contentLabel="Example Modal"
                         >
-                        <div className="modal_container">
+                        <div className="modal_container">   
                             <img className="modal_image" onClick={openModal} src={avatar ? avatar : user.avatar} alt=""/>
                         </div>
                     </Modal>
-                    <span>
+                    <span className="image_change">
                         <i className="fas fa-camera"></i>
-                        <p>Change</p>
+                        <p className="image_change_text">Change</p>
                         <input type="file" name="file" id="file_up" onChange={changeAvatar}/>
                     </span>
                 </div>
