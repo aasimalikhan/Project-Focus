@@ -41,7 +41,7 @@ function Studywith() {
 
     return (
         <React.Fragment>
-         <div id="section_main" className="home_container">
+         <div id="section_main" className="">
                 <h2 className="user_heading">Study with amazing people</h2>
                 <Fade bottom>
                 {err && showErrMsg(err)}

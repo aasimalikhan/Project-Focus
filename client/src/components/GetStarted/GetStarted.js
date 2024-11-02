@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 function GetStarted() {
     return (
         <Fade bottom>
-        <div id="section_main" className="home_container">
+        <div id="section_main" className="">
             <h2 className="user_heading header_default">GET STARTED</h2>
             <div className="data_container">
                 <h2 className="data_container_heading">What is Project Focus?</h2>

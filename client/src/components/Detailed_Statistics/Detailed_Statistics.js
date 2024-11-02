@@ -103,7 +103,7 @@ function Detailed_Statistics() {
     
     return (
         <React.Fragment>
-         <div id="section_main" className="home_container">
+         <div id="section_main" className="">
                 <h2 className="user_heading header_default">DETAILED STATISTICS</h2>
                 <Fade bottom>
                 {!execData.err ? <>
