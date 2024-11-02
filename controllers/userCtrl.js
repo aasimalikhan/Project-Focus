@@ -18,7 +18,7 @@ const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID)
 let {CLIENT_URL, APPLICATION_STATUS} = process.env
 if(APPLICATION_STATUS === 'production')
 {
-    CLIENT_URL = 'https://project-focus.herokuapp.com'
+    CLIENT_URL = 'https://project-focus-9iky.onrender.com/'
 }
 
 const userCtrl = {
