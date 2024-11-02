@@ -6,6 +6,7 @@ A Time-Tracking and Productivity App
 
 - [About the Project](#about-the-project)
 - [Technologies Used](#technologies-used)
+- [Deployment](#deployment)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -77,6 +78,8 @@ Project Focus is a time-tracking and productivity app that utilizes the Pomodoro
    ```
    This starts the frontend application on port 3000.
 
+### Deployment
+   **Project is deployed on onrender** - [Project Focus](https://project-focus-9iky.onrender.com/)
 ### Project Structure
 
 Project-Focus/  
