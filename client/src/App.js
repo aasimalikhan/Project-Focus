@@ -10,6 +10,7 @@ import Header from './components/header/Header'
 import Body from './components/body/Body'
 import axios from 'axios'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch() //dispatch is ued to create an action and feed it to reducer
@@ -68,6 +69,7 @@ function App() {
     <div className="App">
       <Header />
       <Body />
+      <Footer/>
     </div>
     </Router>
   );

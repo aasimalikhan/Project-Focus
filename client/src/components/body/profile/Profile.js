@@ -220,7 +220,7 @@ function Profile() {
             </Fade>
             <Fade right>
             <div className="col-right">
-                <h2 className="user_heading margin-btm-high">{isAdmin ? "Users" : "My Data"}</h2>
+                <h2 className="user_heading margin-btm-high">{isAdmin ? "Users" : ""}</h2>
                 {(isAdmin && !loadingLoader) ? 
                 <div style={{overflowX: "auto"}}>
                     <table className="customers">

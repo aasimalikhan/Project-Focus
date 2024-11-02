@@ -40,7 +40,7 @@ function Register() {
 
         try {
             const res = await axios.post('/user/register', {name, email, password}) //controller adds this data to database
-
+            console.log(res);
             setUser({...user, err: '', success: res.data.msg})
 
         } catch (err) {
