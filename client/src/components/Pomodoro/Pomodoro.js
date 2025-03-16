@@ -72,53 +72,39 @@ function App() {
 
   }
   
-  
-
   useEffect(() => {
-    if(isActive) {
-      const interval = setInterval(() => {
-        requestAnimationFrame(()=>{
-          setSecondsLeft(secondsLeft => secondsLeft - 1)
-        })
-        
-      }, 1000)
-
-      // if(pomStarted)
-      // {
-      // window.addEventListener('beforeunload', (event) => {
-      //   console.log("pomStarted: ", pomStarted)
-      //   if (pomStarted) {
-      //     event.returnValue = 'You have unfinished changes!';
-      //   }
-      // });
-      // }
-
-      // const anim_interval =
-
+    if (isActive) {
+      // Store the start time and remaining seconds when timer is activated
+      const startTime = Date.now();
+      const initialSecondsRemaining = secondsLeft;
       
-    
-      if(secondsLeft === 0) {
-        if(timerMode === 'pomo') //When a single pomodoro timer has finished, then we add that tiemr details into the database
-        {
-          if(isLogged)
-          {
-            addPomodoroData(user.email, pomoLength, new Date().toISOString())
-            //We add the pomodoro details as follows (email, pomodoro time completed, date completed)
-            //We can get the timer details for each user using the email and we can sort it by date so that
-            //they appear in newest first format
+      const interval = setInterval(() => {
+        // Calculate elapsed time since interval started
+        const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+        const newRemainingSeconds = initialSecondsRemaining - elapsedSeconds;
+        
+        // Update timer with the actual elapsed time
+        if (newRemainingSeconds <= 0) {
+          // Timer finished
+          setSecondsLeft(0);
+          clearInterval(interval);
+          setIsActive(false);
+          setButtonText('');
+          
+          // Handle timer completion
+          if (timerMode === 'pomo' && isLogged) {
+            addPomodoroData(user.email, pomoLength, new Date().toISOString());
           }
+          
+          timesUp();
+        } else {
+          setSecondsLeft(newRemainingSeconds);
         }
-        clearInterval(interval)
-        setIsActive(false)
-        setButtonText('')
-        timesUp()
-      }
-
-      return () => clearInterval(interval)
+      }, 250); // Poll more frequently for smoother updates, but use real elapsed time
+  
+      return () => clearInterval(interval);
     }
-    
-  }, [isActive, secondsLeft, timesUp]);
-
+  }, [isActive, timerMode, pomoLength, isLogged, user, timesUp]);
 
   const toggleSettingsVisibility = (event) => {
     setSettingsVisible(!settingsVisible)
